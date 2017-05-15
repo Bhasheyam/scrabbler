@@ -1,7 +1,7 @@
 
 import unittest
-from oracle import suffix,prefix,filter,load
-class scarblertest(unittest.TestCase):
+from scrabble import suffix,prefix,filter,indexfind,load
+class scrabbletest(unittest.TestCase):
     def test1(self):
         expected=["paler"]
         dic=load()
@@ -19,9 +19,18 @@ class scarblertest(unittest.TestCase):
     def test4(self): 
         dic=load()
         expected=['abaft', 'abandon', 'abandoned']
-        actual1=filter("abftndoe")
+        actual1=filter(dic,"abftndoe")
         actual=actual1[:3]
         assert(actual==expected)
+    def test5(self): 
+        expected=[['a','2']]
+        actual=indexfind("aa")
+        print(actual)
+        print(expected)
+        print(actual==expected)
+        assert(actual==expected)
+   
+        
 def main():
     unittest.main()
 
