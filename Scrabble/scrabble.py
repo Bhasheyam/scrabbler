@@ -4,17 +4,14 @@
 
 import sys
 import os
-
-
 #fixing the path and creating file
+
 def create(path,mode):
     working_path = os.path.dirname(__file__) 
     data_path = path
     file_loc = os.path.join(working_path, data_path)
     fileloc = open(file_loc,mode)
     return fileloc
-   
-   
    
    
    
@@ -41,7 +38,6 @@ def indexfind(input):
      countindex.append(temp)
     return countindex
     
-
     #check of string
 def stringcheck(input):
     if(input.isalpha()):
@@ -49,12 +45,10 @@ def stringcheck(input):
     print("Enter only alphabet inputs")
     sys.exit()
     
-    
-    
-    
-    
+          
     
 # support functions for scrabble  
+   
     #support filter
 def prefilter(dic,value):
     resultset=[]
@@ -78,9 +72,6 @@ def filter(dic,inputletters):
                if(words in updateddic): 
                    updateddic.remove(words) 
    return updateddic  
-
-
-
 
 
 
@@ -110,7 +101,6 @@ def scrabblefilter(input,updated):
             scrabble.append(words)
     return scrabble         
         
-
 #pre-fix
 def prefix(dic,keyref):
     resultset=[]
@@ -131,8 +121,6 @@ def suffix(dic,keyref):
         if(list(word[-length:])==key):
             resultset.append(word)
     return resultset
-
-
 
 
 
@@ -174,10 +162,7 @@ def main(arg):
         stringcheck("1")# to throw alphabet Error
  
        
-                  
-                             
-                                                   
-                    
+                                         
 #main   
 if __name__ == "__main__":
    main(sys.argv[1:])
